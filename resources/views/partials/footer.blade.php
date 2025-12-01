@@ -1,1 +1,3 @@
-<h1>Eerste footer test</h1>
+<footer>
+<h1>©Amina Saidi</h1>
+</footer>

@@ -17,4 +17,15 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+//Routes op navigatiebalk
+Route::get('/nieuws', function () {
+    return view('pages.nieuws');
+});
+Route::get('/faq', function () {
+    return view('pages.faq');
+});
+Route::get('/contact', function () {
+    return view('pages.contact');
+});
+
 require __DIR__.'/auth.php';
