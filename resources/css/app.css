@@ -4,7 +4,7 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
+body{
     font-family: 'Oswald', sans-serif;
     background-color: #300a09;
     color: #f0e7d5;
@@ -13,7 +13,7 @@ body {
     flex-direction: column;
 }
 
-main {
+main{
     flex: 1;
 }
 
@@ -47,4 +47,55 @@ footer{
     text-align: center;
     padding: 20px 0;
     width: 100%;
+}
+
+/*login-formulier*/
+
+.login-wrapper{
+    display: flex;
+    justify-content: center; /* horizontaal centreren */
+    margin-top: 100px;       /* afstand vanaf top, kan je aanpassen */
+}
+
+.login-wrapper form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #f0e7d5;
+    width: 400px;
+    align-items: center;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+label{
+    color: #53161d;
+}
+
+.form-actions{
+    color: #53161d;
+}
+
+.register-link{
+    color: #53161d;
+}
+
+.form-group input{
+    width: 300px;
+    border-radius: 5px;
+}
+
+#remember_me{
+    width: 15px;
+    height: 15px;
+    border-radius: 5px;
+}
+
+/*login knop*/
+#login{
+    background-color: #300a09;
+    border-radius: 5px;
+    padding: 10px;
+    color: #f0e7d5;
+    width: 200px;
 }
