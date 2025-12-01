@@ -99,3 +99,34 @@ label{
     color: #f0e7d5;
     width: 200px;
 }
+
+/*forgot password*/
+
+.forgot-password-wrapper{
+    display: flex;
+    justify-content: center; /* horizontaal centreren */
+    margin-top: 100px;       /* afstand vanaf top, kan je aanpassen */
+}
+
+.forgot-password-wrapper form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #f0e7d5;
+    width: 400px;
+    align-items: center;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.forgot-password-wrapper button{
+    background-color: #300a09;
+    border-radius: 5px;
+    padding: 10px;
+    color: #f0e7d5;
+    width: 200px;
+}
+
+.forgot-password-wrapper p{
+    color: #53161d;
+}
