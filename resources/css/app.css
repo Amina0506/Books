@@ -53,8 +53,8 @@ footer{
 
 .login-wrapper{
     display: flex;
-    justify-content: center; /* horizontaal centreren */
-    margin-top: 100px;       /* afstand vanaf top, kan je aanpassen */
+    justify-content: center;
+    margin-top: 100px;
 }
 
 .login-wrapper form{
@@ -101,11 +101,10 @@ label{
 }
 
 /*forgot password*/
-
 .forgot-password-wrapper{
     display: flex;
-    justify-content: center; /* horizontaal centreren */
-    margin-top: 100px;       /* afstand vanaf top, kan je aanpassen */
+    justify-content: center;
+    margin-top: 100px;
 }
 
 .forgot-password-wrapper form{
@@ -129,4 +128,42 @@ label{
 
 .forgot-password-wrapper p{
     color: #53161d;
+}
+
+/*register*/
+
+.register-wrapper{
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.register-wrapper form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #f0e7d5;
+    width: 500px;
+    align-items: center;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.register-wrapper button{
+    background-color: #300a09;
+    border-radius: 5px;
+    padding: 10px;
+    color: #f0e7d5;
+    width: 140px;
+}
+
+.register-wrapper a{
+    background-color: #300a09;
+    border-radius: 5px;
+    padding: 10px;
+    color: #f0e7d5;
+}
+
+.register-wrapper p{
+    color: #f0e7d5;
 }
