@@ -28,4 +28,8 @@ Route::get('/contact', function () {
     return view('pages.contact');
 });
 
+//Routes voor contactformulier
+//Route::get('/contact', [\App\Http\Controllers\ContactController::class, 'create'])->name('contact.create');
+Route::post('/contact', [\App\Http\Controllers\ContactController::class, 'store'])->name('contact.store');
+
 require __DIR__.'/auth.php';
