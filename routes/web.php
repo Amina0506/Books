@@ -29,7 +29,7 @@ Route::get('/contact', function () {
 });
 
 //Routes voor contactformulier
-//Route::get('/contact', [\App\Http\Controllers\ContactController::class, 'create'])->name('contact.create');
+Route::get('/contact', [\App\Http\Controllers\ContactController::class, 'show'])->name('contact.show');
 Route::post('/contact', [\App\Http\Controllers\ContactController::class, 'store'])->name('contact.store');
 
 require __DIR__.'/auth.php';

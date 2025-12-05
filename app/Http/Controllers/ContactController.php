@@ -10,7 +10,7 @@ use App\Mail\ContactMail;
 class ContactController extends Controller
 {
     public function show(){
-        return view('contact');
+        return view('pages.contact');
     }
 
     public function store(Request $request){
