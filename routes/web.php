@@ -28,6 +28,15 @@ Route::get('/contact', function () {
     return view('pages.contact');
 });
 
+//Routes voor profielpagina
+Route::get('/profile/{id}', [ProfileController::class, 'show'])->name('profile.show');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
 //Routes voor contactformulier
 Route::get('/contact', [\App\Http\Controllers\ContactController::class, 'show'])->name('contact.show');
 Route::post('/contact', [\App\Http\Controllers\ContactController::class, 'store'])->name('contact.store');
