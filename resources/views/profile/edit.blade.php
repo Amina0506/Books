@@ -4,7 +4,6 @@
 <section class="profile-info">
     <header>
         <h2>Profile Information</h2>
-        <p>Update your account.</p>
     </header>
 
     <form method="post" action="/profile" enctype="multipart/form-data">
@@ -12,32 +11,32 @@
         @method('patch')
 
         <div>
-            <label for="name">Name</label>
+            <label for="name">Name</label> <br>
             <input id="name" name="name" type="text" value="{{ old('name', $user->name) }}" required autofocus>
         </div>
 
         <div>
-            <label for="email">Email</label>
+            <label for="email">Email</label> <br>
             <input id="email" name="email" type="email" value="{{ old('email', $user->email) }}" required>
         </div>
 
         <div>
-            <label for="username">Username</label>
+            <label for="username">Username</label> <br>
             <input id="username" name="username" type="text" value="{{ old('username', $user->username) }}">
         </div>
 
         <div>
-            <label for="birthday">Birthday</label>
+            <label for="birthday">Birthday</label> <br>
             <input id="birthday" name="birthday" type="date" value="{{ old('birthday', $user->birthday) }}">
         </div>
 
         <div>
-            <label for="profile_photo">Profile Picture</label>
+            <label for="profile_photo">Profile Picture</label> <br>
             <input id="profile_photo" name="profile_photo" type="file" accept="image/*">
         </div>
 
         <div>
-            <label for="bio">Bio</label>
+            <label for="bio">Bio</label> <br>
             <textarea id="bio" name="bio">{{ old('bio', $user->bio) }}</textarea>
         </div>
 
@@ -57,19 +56,19 @@
         @method('put')
 
         <div>
-            <label for="update_password_current_password">Current Password</label>
+            <label for="update_password_current_password">Current Password</label> <br>
             <input id="update_password_current_password" name="current_password" type="password" autocomplete="current-password">
             {{ $errors->updatePassword->first('current_password') }}
         </div>
 
         <div>
-            <label for="update_password_password">New Password</label>
+            <label for="update_password_password">New Password</label> <br>
             <input id="update_password_password" name="password" type="password" autocomplete="new-password">
             {{ $errors->updatePassword->first('password') }}
         </div>
 
         <div>
-            <label for="update_password_password_confirmation">Confirm Password</label>
+            <label for="update_password_password_confirmation">Confirm Password</label> <br>
             <input id="update_password_password_confirmation" name="password_confirmation" type="password" autocomplete="new-password">
             {{ $errors->updatePassword->first('password_confirmation') }}
         </div>
@@ -90,33 +89,27 @@
         <p>Warning! Once the account is deleted, all data will be erased and lost.</p>
     </header>
 
-    <button type="button" onclick="document.getElementById('confirm-deletion-modal').style.display='block'" style="border: darkred solid 2px; background-color: darkred; border-radius: 5px; padding: 4px">
-        Delete Account
-    </button>
+    <form method="post" action="/profile/destroy">
+        @csrf
+        <input type="hidden" name="_method" value="delete">
 
-    <div id="confirm-deletion-modal" style="display:none;">
-        <form method="post" action="/profile/destroy">
-            @csrf
-            <input type="hidden" name="_method" value="delete">
+        <p>Are you sure you want to delete your account?
+            Once the account is deleted, all data will be erased and lost.</p>
 
-            <p>Are you sure you want to delete your account?
-                Once the account is deleted, all data will be erased and lost.</p>
+        <div>
+            <label for="password">Password</label> <br>
+            <input id="password" name="password" type="password" required>
+        </div>
 
-            <div>
-                <label for="password">Password</label>
-                <input id="password" name="password" type="password" required>
-            </div>
+        <div>
+            <button type="button" onclick="document.getElementById('confirm-deletion-modal').style.display='none'">
+                Cancel
+            </button>
 
-            <div>
-                <button type="button" onclick="document.getElementById('confirm-deletion-modal').style.display='none'">
-                    Cancel
-                </button>
-
-                <button type="submit" style="border: darkred solid 2px; background-color: darkred; border-radius: 5px; padding: 4px">
-                    Delete Account
-                </button>
-            </div>
-        </form>
-    </div>
+            <button type="submit" style="border: darkred solid 2px; background-color: darkred; border-radius: 5px; padding: 4px">
+                Delete Account
+            </button>
+        </div>
+    </form>
 </section>
 @endsection
