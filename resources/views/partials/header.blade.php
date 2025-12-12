@@ -7,7 +7,7 @@
             <li><a href="{{ url('/nieuws') }}">Nieuws</a></li>
             <li><a href="{{ url('/faq') }}">FAQ</a></li>
             <li><a href="{{ url('/contact') }}">Contact</a></li>
-            <li>Profiel</li>
+            <li><a href="{{ url('/profile') }}">Profiel</a></li>
 
             <!--voor niet ingelogde gebruiker-->
             @guest
@@ -16,7 +16,6 @@
 
             <!--voor ingelogde gebruikers-->
             @auth
-                <li><a href="{{ url('/profile') }}">Profiel</a></li>
                 <li>
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf

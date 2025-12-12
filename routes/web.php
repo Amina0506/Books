@@ -29,13 +29,14 @@ Route::get('/contact', function () {
 });
 
 //Routes voor profielpagina
-Route::get('/profile/{id}', [ProfileController::class, 'show'])->name('profile.show');
-
 Route::middleware('auth')->group(function () {
     Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+//Route gebruiker bekijken als wel of niet ingelogd met id
+Route::get('/profile/{id}', [ProfileController::class, 'show'])->name('profile.show');
 
 //Routes voor contactformulier
 Route::get('/contact', [\App\Http\Controllers\ContactController::class, 'show'])->name('contact.show');
