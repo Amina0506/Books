@@ -6,8 +6,8 @@
 
 body{
     font-family: 'Oswald', sans-serif;
-    background-color: #440000;
-    color: #f0e7d5;
+    background-color: #8A6674;
+    color: #F7E6A9;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -19,13 +19,15 @@ main{
 
 /*header*/
 header{
-    background-color: #f0e7d5;
-    color: #53161d;
+    background-color: #F7E6A9;
+    color: #8A6674;
     height: 30px;
     display:flex;
     justify-content:space-between;
     align-items:center;
     padding: 10px 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
 
 h1{
@@ -42,15 +44,18 @@ ul{
 
 /*footer*/
 footer{
-    background-color: #f0e7d5;
-    color: #53161d;
+    background-color: #F7E6A9;
+    color: #8A6674;
     text-align: center;
     padding: 20px 0;
     width: 100%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
 }
 
 input, textarea{
     color: #300a09;
+    border-radius: 5px;
 }
 
 /*login-formulier*/
@@ -216,3 +221,45 @@ label{
     height: 400px;
     border-radius: 5px;
 }
+
+/*profile*/
+section{
+    width: 500px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.profile-info header,
+.update-password header,
+.delete-account header{
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    padding: 10px;
+    width: 600px;
+}
+
+.profile-info,
+.update-password,
+.delete-account{
+    width: 600px;
+}
+
+.profile-info button,
+.update-password button{
+    background-color: #300a09;
+    border-radius: 5px;
+    padding: 10px;
+    color: #f0e7d5;
+    width: 140px;
+}
+
+.info-block{
+    padding: 15px;
+}
+
+.profile-info div,
+.update-password div,
+.delete-account div{
+    padding: 5px;
+}
+
