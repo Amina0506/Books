@@ -11,11 +11,6 @@
         @method('patch')
 
         <div>
-            <label for="name">Name</label> <br>
-            <input id="name" name="name" type="text" value="{{ old('name', $user->name) }}" required autofocus>
-        </div>
-
-        <div>
             <label for="email">Email</label> <br>
             <input id="email" name="email" type="email" value="{{ old('email', $user->email) }}" required>
         </div>
@@ -23,6 +18,17 @@
         <div>
             <label for="username">Username</label> <br>
             <input id="username" name="username" type="text" value="{{ old('username', $user->username) }}">
+
+            <!--vanuit stackoverflow-->
+            @if ($errors->any())
+                <div>
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div> @endif
+
         </div>
 
         <div>
@@ -31,8 +37,8 @@
         </div>
 
         <div>
-            <label for="profile_photo">Profile Picture</label> <br>
-            <input id="profile_photo" name="profile_photo" type="file" accept="image/*">
+            <label for="profile_picture">Profile Picture</label> <br>
+            <input id="profile_picture" name="profile_picture" type="file" accept="image/*">
         </div>
 
         <div>
@@ -86,7 +92,6 @@
 <section class="delete-account">
     <header>
         <h2>Delete Account</h2>
-        <p>Warning! Once the account is deleted, all data will be erased and lost.</p>
     </header>
 
     <form method="post" action="/profile/destroy">
