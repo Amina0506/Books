@@ -35,13 +35,14 @@ class ProfileController extends Controller
 
         $request->user()->save();
 
-        return Redirect::route('profile.edit')->with('status', 'profile-updated');
+        return Redirect::route('profile.show', ['id' => $request->user()->id])
+            ->with('status', 'profile-updated');
     }
 
     public function show($id): View
     {
         $user = User::findOrFail($id);
-        return view('profile.edit', compact('user'));
+        return view('profile.show', compact('user'));
     }
 
 
