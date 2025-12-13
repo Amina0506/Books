@@ -96,6 +96,8 @@
 
     <form method="post" action="/profile/destroy">
         @csrf
+        @method('delete')
+
         <input type="hidden" name="_method" value="delete">
 
         <p>Are you sure you want to delete your account?
