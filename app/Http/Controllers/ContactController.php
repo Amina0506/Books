@@ -23,7 +23,7 @@ class ContactController extends Controller
 
         Contact::create($request->all());
 
-        Mail::to('admin@example.com')->send(new ContactMail($data));
+        Mail::to('admin@ehb.be')->send(new ContactMail($data));
 
 
         return back()->with('submitted', true);
