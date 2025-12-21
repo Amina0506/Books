@@ -4,7 +4,13 @@
     <nav>
         <ul>
             <li><a href="{{ url('/') }}">Home</a></li>
-            <li><a href="{{ url('/nieuws') }}">Nieuws</a></li>
+            <li>
+                <a href="{{ auth()->check() && auth()->user()->is_admin
+                    ? route('admin.news.index')
+                    : url('/nieuws') }}">
+                    News
+                </a>
+            </li>
             <li><a href="{{ url('/faq') }}">FAQ</a></li>
             <li><a href="{{ url('/contact') }}">Contact</a></li>
             <li><a href="{{ url('/profile') }}">Profiel</a></li>
