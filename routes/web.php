@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminNewsController;
+use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -41,5 +43,18 @@ Route::get('/profile/{id}', [ProfileController::class, 'show'])->name('profile.s
 //Routes voor contactformulier
 Route::get('/contact', [\App\Http\Controllers\ContactController::class, 'show'])->name('contact.show');
 Route::post('/contact', [\App\Http\Controllers\ContactController::class, 'store'])->name('contact.store');
+
+//Routes voor news voor admin
+Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
+    Route::get('news', [AdminNewsController::class, 'index'])->name('admin.news.index');
+    Route::get('news/create', [AdminNewsController::class, 'create'])->name('admin.news.create');
+    Route::post('news', [AdminNewsController::class, 'store'])->name('admin.news.store');
+    Route::get('news/{news}/edit', [AdminNewsController::class, 'edit'])->name('admin.news.edit');
+    Route::patch('news/{news}', [AdminNewsController::class, 'update'])->name('admin.news.update');
+    Route::delete('news/{news}', [AdminNewsController::class, 'destroy'])->name('admin.news.destroy');
+});
+//Route voor news voor gebruiker
+Route::get('/nieuws', [NewsController::class, 'index'])->name('pages.nieuws');
+
 
 require __DIR__.'/auth.php';
