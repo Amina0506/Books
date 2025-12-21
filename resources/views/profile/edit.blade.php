@@ -12,12 +12,12 @@
 
         <div>
             <label for="email">Email</label> <br>
-            <input id="email" name="email" type="email" value="{{ old('email', $user->email) }}" required>
+            <x-text-input id="email" name="email" type="email" :value="old('email', $user->email)" required/>
         </div>
 
         <div>
             <label for="username">Username</label> <br>
-            <input id="username" name="username" type="text" value="{{ old('username', $user->username) }}">
+            <x-text-input id="username" name="username" :value="old('username', $user->username)"/>
 
             <!--vanuit stackoverflow-->
             @if ($errors->any())
@@ -33,12 +33,12 @@
 
         <div>
             <label for="birthday">Birthday</label> <br>
-            <input id="birthday" name="birthday" type="date" value="{{ old('birthday', $user->birthday) }}">
+            <x-text-input id="birthday" name="birthday" type="date" :value="old('birthday', $user->birthday)"/>
         </div>
 
         <div>
-            <label for="profile_picture">Profile Picture</label> <br>
-            <input id="profile_picture" name="profile_picture" type="file" accept="image/*">
+            <label for="profile_photo">Profile Picture</label> <br>
+            <input id="profile_photo" name="profile_photo" type="file" accept="image/*">
         </div>
 
         <div>
