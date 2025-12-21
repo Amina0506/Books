@@ -26,8 +26,6 @@ header{
     justify-content:space-between;
     align-items:center;
     padding: 10px 20px;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
 }
 
 h1{
@@ -49,8 +47,6 @@ footer{
     text-align: center;
     padding: 20px 0;
     width: 100%;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
 }
 
 input, textarea{
@@ -261,5 +257,40 @@ section{
 .update-password div,
 .delete-account div{
     padding: 5px;
+}
+
+/*nieuws*/
+.nieuws-create-form,
+.nieuws-item{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #F7E6A9;
+    width: 400px;
+    align-items: center;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.nieuws-create-form-wrapper,
+.nieuws-item-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.nieuws-item{
+    color: #8A6674;
+}
+
+.nieuws-item-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
