@@ -17,7 +17,7 @@
                     <span style="font-size: 20px; text-align: justify; display: flex; justify-content: center;">{{ $item->content }}</span>
                 </p>
 
-                <div style="margin-top: 10px; text-align: center;">
+                <div id="extra-{{ $item->id }}" style="margin-top: 10px; text-align: center;" class="hidden">
                     <p><span style="font-size: 25px; display: flex; justify-content: center; color: #5a424c">Genre:</span>
                         <span style="font-size: 20px; display: flex; justify-content: center;">{{ $item->genre }}</span></p>
                     <p><span style="font-size: 25px; display: flex; justify-content: center; color: #5a424c">Author:</span>
@@ -29,7 +29,7 @@
                 @endif
 
                 @if ($item->image)
-                    <img src="{{ asset('storage/' . $item->image) }}" width="400" style="border-radius: 5px; display: block; margin: 0 auto;">
+                    <img src="{{ asset('storage/' . $item->image) }}" alt="" width="400" style="border-radius: 5px; display: block; margin: 0 auto;">
                 @endif
 
                 <div style="text-align: center; margin-top: 10px;">

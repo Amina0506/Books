@@ -295,3 +295,6 @@ section{
     flex-wrap: wrap;
 }
 
+.hidden{
+    display: none;
+}
