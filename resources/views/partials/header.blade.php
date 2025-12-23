@@ -11,7 +11,13 @@
                     News
                 </a>
             </li>
-            <li><a href="{{ url('/faq') }}">FAQ</a></li>
+            <li>
+                <a href="{{ auth()->check() && auth()->user()->is_admin
+                    ? route('admin.faq.index')
+                    : route('faq.index') }}">
+                    FAQ
+                </a>
+            </li>
             <li><a href="{{ url('/contact') }}">Contact</a></li>
             <li><a href="{{ url('/profile') }}">Profiel</a></li>
 
