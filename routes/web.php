@@ -47,6 +47,9 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     //FAQ
     Route::get('/admin/faq', [FaqAdminController::class, 'index'])->name('admin.faq.index');
     Route::resource('faq', FaqAdminController::class)->except(['show']);
+
+    Route::resource('faq-category', App\Http\Controllers\Admin\FaqCategoryAdminController::class)->except(['show']);
+
 });
 
 require __DIR__.'/auth.php';
