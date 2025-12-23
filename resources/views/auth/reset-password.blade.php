@@ -1,4 +1,7 @@
-<x-guest-layout>
+@extends('layouts.app')
+
+@section('content')
+    <div class="forgot-password-wrapper">
     <form method="POST" action="{{ route('password.store') }}">
         @csrf
 
@@ -36,4 +39,5 @@
             </x-primary-button>
         </div>
     </form>
-</x-guest-layout>
+    </div>
+@endsection
