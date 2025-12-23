@@ -3,7 +3,15 @@
 
     <nav>
         <ul>
-            <li><a href="{{ url('/') }}">Home</a></li>
+            <li>
+                @if(Auth::check() && Auth::user()->is_admin)
+                    <a href="{{ route('admin.home') }}">Home</a>
+                @elseif(Auth::check())
+                    <a href="{{ route('dashboard') }}">Home</a>
+                @else
+                    <a href="{{ url('/') }}">Home</a>
+                @endif
+            </li>
             <li>
                 <a href="{{ auth()->check() && auth()->user()->is_admin
                     ? route('admin.news.index')

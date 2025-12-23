@@ -47,9 +47,14 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     //FAQ
     Route::get('/admin/faq', [FaqAdminController::class, 'index'])->name('admin.faq.index');
     Route::resource('faq', FaqAdminController::class)->except(['show']);
-
     Route::resource('faq-category', App\Http\Controllers\Admin\FaqCategoryAdminController::class)->except(['show']);
 
+    //Gebruikersbeheer
+    Route::get('/admin/users', [App\Http\Controllers\Admin\UserController::class, 'index'])->name('admin.users.index');
+    Route::get('/admin', function () {
+        return view('admin.home');
+    })->name('admin.home');
+    Route::patch('/admin/users/{user}/toggle-admin', [App\Http\Controllers\Admin\UserController::class, 'toggleAdmin'])->name('admin.users.toggleAdmin');
 });
 
 require __DIR__.'/auth.php';
