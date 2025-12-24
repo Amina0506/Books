@@ -1,17 +1,42 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
-        </h2>
-    </x-slot>
+@extends('layouts.app')
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900">
-                    {{ __("You're logged in!") }}
-                </div>
-            </div>
+@section('content')
+    <section style="background-image: url('{{ asset('build/assets/books-cover.jpg') }}'); background-position: center; width:99%; height: 500px; display: flex; align-items: center; justify-content: center; text-align: center; color: #fff; border-radius: 15px; margin-top: 10px">
+        <div>
+            <h1 style="font-size: 48px; font-weight: bold; color: #F7E6A9">Welcome Back, {{ Auth::user()->name }}!</h1>
+            <p style="font-size: 28px; margin-top: 10px; color: #F7E6A9; margin-bottom: 50px">Your personalized book space</p>
+            <a href="{{ route('for-you.index') }}" style="padding: 12px 30px; background-color: #8A6674; color: #F7E6A9; border-radius: 5px; text-decoration: none; font-weight: bold; margin-top: 20px">Explore Recommendations</a>
         </div>
-    </div>
-</x-app-layout>
+    </section>
+
+    <section style="display: flex; justify-content: center; gap: 200px; margin-top: 30px;">
+        <a href="{{ route('for-you.index') }}" style="padding: 20px 40px; background-color: #F7E6A9FF; color: #8A6674; border-radius: 5px; font-size: 28px">ForYou</a>
+        <a href="{{ route('faq.index') }}" style="padding: 20px 40px; background-color: #F7E6A9FF; color: #8A6674; border-radius: 5px; font-size: 28px">FAQ</a>
+        <a href="{{ route('contact.show') }}" style="padding: 20px 40px; background-color: #F7E6A9FF; color: #8A6674; border-radius: 5px; font-size: 28px">Contact</a>
+    </section>
+
+    <section style="display: flex; align-items: center; gap: 20px; padding: 50px 50px; background-color: #dddad5; margin-bottom: 40px; border-radius: 20px; width: 80%; color: #8A6674FF">
+        <div style="flex:1;">
+            <h2 style="font-size: 28px; margin-bottom: 15px;">Our Story</h2>
+            <p style="font-size: 20px">We started with a simple idea: to bring people together through stories and inspiration. As a valued member, you are now part of our journey, enjoying curated content and recommendations just for you.</p>
+        </div>
+        <div style="flex:1;">
+            <img src="{{ asset('build/assets/our-story.jpg') }}" alt="Our Story" style="width:100%; border-radius: 8px;">
+        </div>
+    </section>
+
+    <section style="display: flex; align-items: center; gap: 20px; padding: 50px 50px; background-color: #dddad5; margin-bottom: 40px; border-radius: 20px; width: 80%; color: #8A6674FF">
+        <div style="flex:1;">
+            <img src="{{ asset('build/assets/guest.jpg') }}" alt="Recommendations" style="width:100%; border-radius: 8px;">
+        </div>
+        <div style="flex:1;">
+            <h2 style="font-size: 28px; margin-bottom: 15px;">Recommended for You</h2>
+            <p style="font-size: 20px">Based on your interests and reading history, we’ve selected books and content you’ll love. Dive in and discover something new today!</p>
+        </div>
+    </section>
+
+    <section style="text-align: center; padding: 60px 50px; background-color: #dddad5; border-radius: 20px; width: 80%; color: #8A6674FF">
+        <h2 style="font-size: 32px; margin-bottom: 20px;">Your Library Awaits</h2>
+        <a href="{{ route('for-you.index') }}" style="padding: 12px 30px; background-color: #F7E6A9FF; color: #8A6674; border-radius: 5px; text-decoration: none; font-weight: bold;">Explore More</a>
+    </section>
+@endsection
