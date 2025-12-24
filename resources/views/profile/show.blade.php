@@ -4,7 +4,6 @@
     <section class="profile-info">
         <header>
             <h2>Profile Information</h2>
-            <p>Your account details</p>
         </header>
 
         <div style="display: flex; gap: 100px">
