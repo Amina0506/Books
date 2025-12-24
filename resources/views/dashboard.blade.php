@@ -15,6 +15,30 @@
         <a href="{{ route('contact.show') }}" style="padding: 20px 40px; background-color: #F7E6A9FF; color: #8A6674; border-radius: 5px; font-size: 28px">Contact</a>
     </section>
 
+
+    <section style="text-align: center; margin-bottom: 20px; margin-top: 100px">
+        <h2 style="font-size: 24px; color: #F7E6A9FF; font-weight: bold;">Discover New People</h2>
+        <p style="margin-top: 15px; font-size: 20px">Search for a person's account using their username</p>
+    </section>
+
+    <div style="display: flex; justify-content: center; margin-top: 30px;">
+        <form action="{{ route('user.search') }}" method="GET">
+            <input
+                type="text"
+                name="username"
+                placeholder="Search a username..."
+                required
+                style="padding: 10px 15px; width: 400px; border-radius: 5px; border: 1px solid #ccc; margin-bottom: 100px"
+            >
+            <button
+                type="submit"
+                style="padding: 5px 20px; border-radius: 5px; background-color: #5a424c; color: white; border: none; margin-left: 20px"
+            >
+                Search
+            </button>
+        </form>
+    </div>
+
     <section style="display: flex; align-items: center; gap: 20px; padding: 50px 50px; background-color: #dddad5; margin-bottom: 40px; border-radius: 20px; width: 80%; color: #8A6674FF">
         <div style="flex:1;">
             <h2 style="font-size: 28px; margin-bottom: 15px;">Our Story</h2>

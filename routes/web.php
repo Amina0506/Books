@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\FaqAdminController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -36,6 +37,8 @@ Route::middleware('auth')->group(function () {
 
 //Route gebruiker bekijken als wel of niet ingelogd met id
 Route::get('/profile/{id}', [ProfileController::class, 'show'])->name('profile.show');
+
+Route::get('/search-user', [UserController::class, 'search'])->name('user.search');
 
 //Routes voor admin
 Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
