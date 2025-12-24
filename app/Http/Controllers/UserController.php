@@ -9,6 +9,13 @@ class UserController extends Controller
 {
     public function search(Request $request)
     {
+        $username = $request->input('username');
+        $user = User::where('username', $username)->first();
+
+        if (!$user) {
+            return redirect()->back()->with('error', 'Gebruiker bestaat niet.');
+        }
+
         $request->validate([
             'username' => 'required|string'
         ]);

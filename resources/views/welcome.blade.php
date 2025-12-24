@@ -27,6 +27,7 @@
                 name="username"
                 placeholder="Search a username..."
                 required
+                autofocus
                 style="padding: 10px 15px; width: 400px; border-radius: 5px; border: 1px solid #ccc; margin-bottom: 100px"
             >
             <button
@@ -37,6 +38,12 @@
             </button>
         </form>
     </div>
+
+    @if (session('error'))
+        <div style="text-align: center; color: #5A424CFF; margin-top: -40px">
+            {{ session('error') }}
+        </div>
+    @endif
 
     <section style="display: flex; align-items: center; gap: 20px; padding: 50px 50px; background-color: #dddad5; margin-bottom: 40px; border-radius: 20px; width: 80%; color: #8A6674FF">
         <div style="flex:1;">
