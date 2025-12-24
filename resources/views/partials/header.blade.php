@@ -19,6 +19,11 @@
                     News
                 </a>
             </li>
+            @auth
+                <li>
+                    <a href="{{ route('for-you.index') }}">For You</a>
+                </li>
+            @endauth
             <li>
                 <a href="{{ auth()->check() && auth()->user()->is_admin
                     ? route('admin.faq.index')
