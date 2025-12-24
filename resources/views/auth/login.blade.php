@@ -32,7 +32,7 @@
 
         <!-- Remember Me -->
         <div class="form-group">
-            <label for="remember_me" cl>
+            <label for="remember_me">
                 <input id="remember_me" type="checkbox" name="remember">
                 <span>Remember me</span>
             </label>
@@ -48,7 +48,7 @@
         <button type="submit" id="login">Log in</button>
 
         <p class="register-link">
-            Nog geen account? <a href="{{ route('register') }}"><u>Registreer hier</u></a>
+            Don't have an account yet? <a href="{{ route('register') }}"><u>Register here</u></a>
         </p>
     </form>
     </div>
