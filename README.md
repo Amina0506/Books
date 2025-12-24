@@ -1,59 +1,82 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# MyBooks
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+MyBooks is een dynamische Laravel-website voor boekenliefhebbers. 
+Gebruikers kunnen een account aanmaken, hun profiel beheren, nieuws bekijken, 
+FAQ raadplegen, en contact opnemen met admins. 
+Extra features zijn een gepersonaliseerde 
+“For You”-pagina en een zoekfunctie om andere gebruikers te vinden.
 
-## About Laravel
+## Inhoud van de website
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### Login systeem
+- Gebruikers kunnen:
+    - Inloggen
+    - Account aanmaken
+- Rollen:
+    - Gebruiker
+    - Admin
+- Admins kunnen:
+    - Andere gebruikers tot admin verheffen of rechten afnemen
+    - Nieuwe gebruikers manueel aanmaken
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Profielpagina
+- Elke gebruiker heeft een publieke profielpagina
+- Ingelogde gebruiker kan eigen profiel aanpassen
+- Profielinformatie bevat:
+    - Username
+    - Verjaardag
+    - Profielfoto
+    - "Over mij"-tekst
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Nieuws
+- Admins kunnen nieuwsitems:
+    - Toevoegen
+    - Wijzigen
+    - Verwijderen
+- Nieuwsitem bevat:
+    - Titel
+    - Afbeelding
+    - Content
+    - Publicatiedatum
+- Alle bezoekers kunnen nieuws bekijken
 
-## Learning Laravel
+### FAQ
+- FAQ-items gegroepeerd per categorie
+- Admins kunnen:
+    - Categorieën beheren
+    - Vraag/antwoord toevoegen, wijzigen of verwijderen
+- Alle bezoekers kunnen FAQ bekijken
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+### Contactpagina
+- Bezoekers kunnen een contactformulier invullen
+- Admin ontvangt een e-mail bij verzending
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Extra features
+- **For You-pagina**
+    - Alleen zichtbaar voor ingelogde gebruikers
+    - Gebruiker kiest een categorie en ziet relevante boeken
+    - Elk boek bevat details en korte uitleg waarom het “voor jou” is
+    - Admins kunnen boeken en categorieën beheren
+- **Zoekfunctie**
+    - Voor ingelogde en niet-ingelogde gebruikers
+    - Zoeken op username
+    - Resultaat: profielpagina van de betreffende gebruiker
 
-## Laravel Sponsors
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## Installatie 
 
-### Premium Partners
+1. **Clone de repository**
+    - git clone https://github.com/Amina0506/Books.git
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+2. **Dependencies installeren**
+    - composer install 
+    - npm install
+    - 'npm run dev' om de CSS zichtbaar te maken
+3. **Toegang van de default user**
+    - Username: admin
+    - Email: admin@ehb.be
+    - Wachtwoord: Password!321
 
-## Contributing
+## Bronvermeldingen
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Voor dit project heb ik gebruik gemaakt van de Laravel-documentatie en de PowerPoint-presentaties van de cursus.
