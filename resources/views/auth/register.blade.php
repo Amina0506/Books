@@ -17,6 +17,16 @@
         @enderror
     </div>
 
+    <!-- Username -->
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input id="username" type="text" name="username" value="{{ old('username') }}" required autofocus autocomplete="username">
+
+        @error('username')
+        <div>{{ $message }}</div>
+        @enderror
+    </div>
+
     <!-- Email Address -->
     <div class="form-group">
         <label for="email">Email</label>
