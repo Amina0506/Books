@@ -55,6 +55,10 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
         return view('admin.home');
     })->name('admin.home');
     Route::patch('/admin/users/{user}/toggle-admin', [App\Http\Controllers\Admin\UserController::class, 'toggleAdmin'])->name('admin.users.toggleAdmin');
+
+    //Maak nieuwe gebruiker
+    Route::get('/admin/users/create', [App\Http\Controllers\Admin\UserController::class, 'create'])->name('admin.users.create');
+    Route::post('/admin/users', [App\Http\Controllers\Admin\UserController::class, 'store'])->name('admin.users.store');
 });
 
 require __DIR__.'/auth.php';
