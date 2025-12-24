@@ -25,6 +25,11 @@
         </div>
 
         <div class="info-block">
+            <strong>Name:</strong>
+            <p>{{ $user->name }}</p>
+        </div>
+
+        <div class="info-block">
             <strong>Birthday:</strong>
             <p>{{ $user->birthday ?? 'Birthday not set' }}</p>
         </div>
