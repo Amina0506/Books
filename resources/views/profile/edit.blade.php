@@ -16,6 +16,11 @@
         </div>
 
         <div>
+            <label for="name">Name</label> <br>
+            <x-text-input id="name" name="name" :value="old('name', $user->name)" required/>
+        </div>
+
+        <div>
             <label for="username">Username</label> <br>
             <x-text-input id="username" name="username" :value="old('username', $user->username)"/>
 
