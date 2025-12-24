@@ -99,7 +99,7 @@
         <h2>Delete Account</h2>
     </header>
 
-    <form method="post" action="/profile/destroy">
+    <form method="post" action="{{ route('profile.destroy') }}">
         @csrf
         @method('delete')
 
