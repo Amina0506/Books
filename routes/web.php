@@ -24,6 +24,9 @@ Route::get('/nieuws', [NewsController::class, 'index'])->name('pages.nieuws');
 Route::get('/contact', [\App\Http\Controllers\ContactController::class, 'show'])->name('contact.show');
 Route::post('/contact', [\App\Http\Controllers\ContactController::class, 'store'])->name('contact.store');
 
+//Route voor for you pagina
+Route::get('/for-you', [App\Http\Controllers\ForYouController::class, 'index'])->name('for-you.index')->middleware('auth');
+
 //Routes voor profielpagina
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -59,6 +62,12 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     //Maak nieuwe gebruiker
     Route::get('/admin/users/create', [App\Http\Controllers\Admin\UserController::class, 'create'])->name('admin.users.create');
     Route::post('/admin/users', [App\Http\Controllers\Admin\UserController::class, 'store'])->name('admin.users.store');
+
+    //Thema's beheren
+    Route::resource('admin/themes', App\Http\Controllers\Admin\ThemeAdminController::class)->except(['show']);
+
+    //Boek toevoegen
+    Route::resource('books', App\Http\Controllers\Admin\BookAdminController::class);
 });
 
 require __DIR__.'/auth.php';
