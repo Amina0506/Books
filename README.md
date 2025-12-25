@@ -4,7 +4,7 @@ MyBooks is een dynamische Laravel-website voor boekenliefhebbers.
 Gebruikers kunnen een account aanmaken, hun profiel beheren, nieuws bekijken, 
 FAQ raadplegen, en contact opnemen met admins. 
 Extra features zijn een gepersonaliseerde 
-“For You”-pagina en een zoekfunctie om andere gebruikers te vinden.
+“For You”-pagina en de mogelijkheid voor gebruikers om boeken als favorieten op te slaan en op hun profiel te bekijken.
 
 ## Inhoud van de website
 
@@ -12,6 +12,7 @@ Extra features zijn een gepersonaliseerde
 - Gebruikers kunnen:
     - Inloggen
     - Account aanmaken
+    - Andere gebruikers opzoeken a.d.h.v de zoekbalk
 - Rollen:
     - Gebruiker
     - Admin
@@ -57,10 +58,9 @@ Extra features zijn een gepersonaliseerde
     - Gebruiker kiest een categorie en ziet relevante boeken
     - Elk boek bevat details en korte uitleg waarom het “voor jou” is
     - Admins kunnen boeken en categorieën beheren
-- **Zoekfunctie**
-    - Voor ingelogde en niet-ingelogde gebruikers
-    - Zoeken op username
-    - Resultaat: profielpagina van de betreffende gebruiker
+- **Favorieten**
+    - Gebruiker kan een boek aan zijn favorieten toevoegen
+    - Favoriete boek is zichtbaar op de profielpagina van de gebruiker voor wel en niet ingelogde gebruikers
 
 
 ## Installatie 
