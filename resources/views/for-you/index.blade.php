@@ -24,6 +24,17 @@
                     <p style="margin-bottom: 6px;"><strong>Author:</strong> {{ $book->author }}</p>
                     <p style="margin-bottom: 6px; text-align: justify; padding-top: 10px; padding-bottom: 10px">{{  $book->description }}</p>
                     <p style="font-style: italic; color: #555; text-align: justify; border-top: #F7E6A9 2px solid; padding-top: 10px">{{ $book->for_you_reason }}</p>
+
+                    @auth
+                        <form method="POST" action="{{ route('favorite.store', $book) }}">
+                            @csrf
+                            <button type="submit"
+                                    style="margin-top:10px; padding:6px 12px; border:2px solid #F7E6A9; border-radius:4px;">
+                                Favorite
+                            </button>
+                        </form>
+                    @endauth
+
                 </div>
             @empty
                 <p style="font-size: 18px">No books found.</p>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ProfileUpdateRequest;
+use App\Models\Favorite;
 use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -51,7 +52,12 @@ class ProfileController extends Controller
     public function show($id): View
     {
         $user = User::findOrFail($id);
-        return view('profile.show', compact('user'));
+
+        $favorites = Favorite::where('user_id', $user->id)
+            ->with('book')
+            ->get();
+
+        return view('profile.show', compact('user', 'favorites'));
     }
 
 

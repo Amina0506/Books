@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\AdminNewsController;
 use App\Http\Controllers\Admin\FaqAdminController;
 use App\Http\Controllers\FaqController;
+use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
@@ -72,5 +73,12 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     //Boek toevoegen
     Route::resource('books', App\Http\Controllers\Admin\BookAdminController::class);
 });
+
+//Routes voor favorieten
+Route::middleware('auth')->group(function () {
+    Route::post('/favorite/{book}', [FavoriteController::class, 'store'])->name('favorite.store');
+    Route::delete('/favorite/{favorite}', [FavoriteController::class, 'destroy'])->name('favorite.destroy');
+});
+
 
 require __DIR__.'/auth.php';
