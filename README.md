@@ -76,6 +76,15 @@ Extra features zijn een gepersonaliseerde
     - Username: admin
     - Email: admin@ehb.be
     - Wachtwoord: Password!321
+4. **Contactformulier laten werken met mailtrap**
+   - In de env file:
+     - MAIL_MAILER=smtp
+     - MAIL_HOST=sandbox.smtp.mailtrap.io
+     - MAIL_PORT=2525
+     - MAIL_USERNAME=850afc38c2f27a
+     - MAIL_PASSWORD=eab03bfad56733
+     - MAIL_FROM_ADDRESS="hello@example.com"
+     - MAIL_FROM_NAME="${APP_NAME}"
 
 ## Bronvermeldingen
 
